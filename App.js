@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
 import Task from './srn/SecondScreen/index.js';
 
+
 export default function App() {
   const [task, setTask] = useState();
   const [taskItems, setTaskItems] = useState([]);
@@ -12,10 +13,10 @@ export default function App() {
     setTask(null);
   }
 
-  const completeTask = (index) => {
-    let itemsCopy = [...taskItems];
-    itemsCopy.splice(index, 1);
-    setTaskItems(itemsCopy)
+  const completarTarefa = (index) => {
+    let copiarItem = [...taskItems];
+    copiarItem.splice(index, 1);
+    setTaskItems(copiarItem)
   }
 
   return (
@@ -24,18 +25,15 @@ export default function App() {
         contentContainerStyle={{
           flexGrow: 1
         }}
-        keyboardShouldPersistTaps='handled'
-      >
+        keyboardShouldPersistTaps='handled'>
 
-      {/* Today's Tasks */}
       <View style={styles.tasksWrapper}>
-        <Text style={styles.sectionTitle}>Gerenciador de Tarefas</Text>
+        <Text style={styles.titulo}>Gerenciador de Tarefas</Text>
         <View style={styles.items}>
-
           {
             taskItems.map((item, index) => {
               return (
-                <TouchableOpacity key={index}  onPress={() => completeTask(index)}>
+                <TouchableOpacity key={index}  onPress={() => completarTarefa(index)}>
                   <Task text={item} /> 
                 </TouchableOpacity>
               )
@@ -51,7 +49,7 @@ export default function App() {
         <TextInput style={styles.input} placeholder={'Adicione uma Tarefa'} value={task} onChangeText={text => setTask(text)} />
 
         <TouchableOpacity onPress={() => handleAddTask()}>
-          <View style={styles.addWrapper}>
+          <View style={styles.addTarefa}>
             <Text style={styles.addText}>+</Text>
           </View>
         </TouchableOpacity>
@@ -70,7 +68,7 @@ const styles = StyleSheet.create({
     paddingTop: 80,
     paddingHorizontal: 20,
   },
-  sectionTitle: {
+  titulo: {
     fontSize: 24,
     textAlign: 'center',
     color: 'white',
@@ -96,7 +94,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     width: 250,
   },
-  addWrapper: {
+  addTarefa: {
     width: 50,
     height: 50,
     backgroundColor: '#948945',

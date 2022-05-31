@@ -7,7 +7,7 @@ const Task = (props) => {
     <View style={styles.item}>
       <View style={styles.itemLeft}>
         <View style={styles.square}></View>
-        <Text style={styles.itemText}>{props.text}</Text>
+        <Text style={styles.itemText}>{props.text}     00/00/0000</Text>
       </View>
       <View style={styles.circular}></View>
     </View>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   circular: {
     width: 12,
     height: 12,
-    borderColor: '#55BCF6',
+    borderColor: 'red',
     borderWidth: 2,
     borderRadius: 5,
   },
