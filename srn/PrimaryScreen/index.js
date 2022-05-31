@@ -3,25 +3,19 @@ import { Image,
     Text,
     View,
     StyleSheet,
-    KeyboardAvoidingView,
+    KeyboardAvoidingView, Button,
     ImageBackground } from 'react-native';
 
 
 const Inicial = (props) => {
 
     return (
-        <KeyboardAvoidingView style={style.background}>
-
-      <ImageBackground> uri(https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F29%2F35%2F1f%2F29351fc35fcd3eebc73a27935796e95b.jpg&imgrefurl=https%3A%2F%2Fbr.pinterest.com%2Fpin%2F230528074665400989%2F&tbnid=keu22XEXBDdTEM&vet=10CF4QMyiRAWoXChMI2M-x_L3z9wIVAAAAAB0AAAAAEAI..i&docid=Y9l_Pjuj0Pv2vM&w=750&h=1125&q=relogio%20com%20roxo&client=ubuntu&ved=0CF4QMyiRAWoXChMI2M-x_L3z9wIVAAAAAB0AAAAAEAI)</ImageBackground> 
-      
-      <View>
-        <Text style ={style.textoTopo}>Gerenciamento de atividades</Text>
+      <View> 
+        <a helf="/gtarefas/srn/SecondScreen">
+          <Button>Clica aqui</Button>
+        </a>
       </View>
 
-      <TouchableOpacity style = {style.botao}>
-        <Text style = {style.textoBotao}>Comecar</Text>
-      </TouchableOpacity>
-    </KeyboardAvoidingView>
     )
 }
 
